@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer" style="padding: 20px; background-color: lightblue;">
+        Outer Div
+        <section id="middle" style="padding: 20px; background-color: lightgreen;">
+          Middle Section
+          <button id="inner">Click Me</button>
+        </section>
+      </div>
+    
+      <script>
+        document.getElementById("outer").addEventListener("click", () => alert("Outer Div clicked"));
+        document.getElementById("middle").addEventListener("click", () => alert("Middle Section clicked"));
+        document.getElementById("inner").addEventListener("click", (e) => {
+          alert("Button clicked");
+          e.stopPropagation(); 
+        });
+      </script>
+</body>
+</html>
